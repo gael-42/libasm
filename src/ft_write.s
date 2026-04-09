@@ -4,3 +4,7 @@
 section .text
 	global _start:.
 _start:
+mov rax, 1
+; mov rsi, buf
+; mov rdx, len
+syscall
