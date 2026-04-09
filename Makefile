@@ -1,0 +1,38 @@
+ASM			= nasm
+AR			= ar
+RANLIB		= ranlib
+ASM_FLAGS	= -g -f elf64
+NAME		= libasm.a
+
+ASM_SRC		= 
+ASM_OBJ		= $(ASM_SRC:.s=.o)
+
+CC			= gcc
+C_FLAGS		= -Wall -Wextra -Werror -g3
+TEST_INCLUDE = -I src/
+TEST_SRC	= src/main.c
+TEST_OBJ	= $(TEST_SRC:.c=.o)
+TEST_NAME	= unit_tests
+
+all: $(NAME) $(TEST_NAME)
+
+$(NAME): $(ASM_OBJ)
+	$(AR) rcs $@ $^
+	$(RANLIB) $@
+
+$(TEST_NAME): $(TEST_OBJ) $(NAME)
+	$(CC) $(C_FLAGS) $(TEST_INCLUDE) -o $@ $^ $(NAME)
+
+%.o: %.s
+	$(ASM) $(ASM_FLAGS) -o $@ $<
+
+%.o: %.c
+	$(CC) $(C_FLAGS) -c $(TEST_INCLUDE) -o $@ $<
+
+clean:
+	rm -f $(ASM_OBJ) $(TEST_OBJ)
+
+fclean: clean
+	rm -f $(NAME) $(TEST_NAME)
+
+re: clean fclean all
