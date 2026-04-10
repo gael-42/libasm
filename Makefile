@@ -21,7 +21,7 @@ $(NAME): $(ASM_OBJ)
 	$(RANLIB) $@
 
 $(TEST_NAME): $(TEST_OBJ) $(NAME)
-	$(CC) $(C_FLAGS) $(TEST_INCLUDE) -o $@ $^ $(NAME)
+	$(CC) $(C_FLAGS) $(TEST_INCLUDE) -o $@ $^
 
 %.o: %.s
 	$(ASM) $(ASM_FLAGS) -o $@ $<
@@ -35,4 +35,4 @@ clean:
 fclean: clean
 	rm -f $(NAME) $(TEST_NAME)
 
-re: clean fclean all
+re: fclean all
