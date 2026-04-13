@@ -1,2 +1,4 @@
-.o
-.a
+*.o
+*.a
+unit_tests
+test
