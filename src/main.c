@@ -4,7 +4,7 @@ extern size_t ft_strlen(const char* str);
 
 void test_ft_strlen(char *str) {
 	int size = ft_strlen(str);
-	printf("str = %s, size = %d\n", str, size);
+	printf("str = %s, size = %d, strlen = %ld\n", str, size, strlen(str));
 }
 
 int main() {

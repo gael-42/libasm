@@ -24,10 +24,10 @@ $(TEST_NAME): $(TEST_OBJ) $(NAME)
 	$(CC) $(C_FLAGS) $(TEST_INCLUDE) -o $@ $^
 
 src/%.o: src/%.s
-	$(ASM) $(ASM_FLAGS) -o $@ $
+	$(ASM) $(ASM_FLAGS) -o $@ $<
 
 src/%.o: src/%.c
-	$(CC) $(C_FLAGS) -c $(TEST_INCLUDE) -o $@ $
+	$(CC) $(C_FLAGS) -c $(TEST_INCLUDE) -o $@ $<
 
 clean:
 	rm -f $(ASM_OBJ) $(TEST_OBJ)
