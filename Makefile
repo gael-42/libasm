@@ -4,7 +4,7 @@ RANLIB      = ranlib
 ASM_FLAGS   = -g -f elf64
 NAME        = libasm.a
 
-ASM_SRC     = src/ft_strlen.s src/ft_write.s
+ASM_SRC     = src/ft_strlen.s src/ft_write.s src/ft_strcpy.s
 ASM_OBJ     = $(ASM_SRC:.s=.o)
 
 CC          = gcc
