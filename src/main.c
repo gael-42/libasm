@@ -3,6 +3,15 @@
 extern size_t ft_strlen(const char* str);
 extern ssize_t ft_write(int fd, const void *buf, size_t count);
 extern char *ft_strcpy(char *dest, const char *src);
+extern int ft_strcmp(const char *s1, const char *s2);
+
+void test_ft_strcmp() {
+	char *s1 = "Hello";
+	char *s2 = "Hella";
+
+	printf("strcmp = %d\n", strcmp(s1,s2));
+	printf("ft_strcmp = %d\n", ft_strcmp(s1,s2));
+}
 
 void test_ft_strcpy(char *src) {
 	char dest[1000];
@@ -40,5 +49,6 @@ test_ft_write("Please write this");
 test_ft_write("");
 test_ft_strcpy("Please copy this");
 test_ft_strcpy("");
+test_ft_strcmp();
 return 0;
 }
