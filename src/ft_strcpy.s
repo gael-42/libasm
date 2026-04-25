@@ -21,6 +21,6 @@ copy:
 	jmp copy				; repeat loop
 
 done:
-	mov byte [rdi + rax], 0	; add \0 at the end of dests
-	mov rdi, rax			; store dest pointer in rax (return register)
+	mov byte [rdi + rax], 0	; add \0 at the end of dest
+	mov rax, rdi			; ??
 	ret						; return rax

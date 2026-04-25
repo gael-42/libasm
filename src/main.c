@@ -7,10 +7,11 @@ extern char *ft_strcpy(char *dest, const char *src);
 void test_ft_strcpy(char *src) {
 	char dest[1000];
 	memset(dest, 0, 1000);
+	char *result = ft_strcpy(dest, src);
 
 	printf("FT_STRCPY\n");
 	printf("strcpy = %s\n", strcpy(dest, src));
-	printf("ft_strcpy = %s\n", ft_strcpy(dest, src));
+	printf("ft_strcpy = %s\n", result);
 }
 
 void test_ft_write(char *src) {
