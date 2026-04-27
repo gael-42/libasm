@@ -1,6 +1,6 @@
 ; int strcmp(const char *s1, const char *s2);
 ; ret 0 if equal, <0 if s1 < s2, >0 if s1>s2
-; rsi = s1, rdi = s2
+; rdi = s1, rsi = s2
 
 ; int	ft_strncmp(char *s1, char *s2, unsigned int n)
 ; {
@@ -36,9 +36,8 @@ compare:
 	jmp compare							; loop
 
 substract:
-	mov dl, 0
-	mov dl, [rsi + rax]					; store rsi[rax] in dl
-	mov cl, [rdi + rax]					; store rdi[rax] in cl
+	mov dl, [rdi + rax]					; store rsi[rax] in dl
+	mov cl, [rsi + rax]					; store rdi[rax] in cl
 	sub dl, cl							; substract cl to dl (result stored in dl)
 	movzx rax, dl						; move dl to rax
 	ret									; return rax

@@ -6,8 +6,8 @@ extern char *ft_strcpy(char *dest, const char *src);
 extern int ft_strcmp(const char *s1, const char *s2);
 
 void test_ft_strcmp() {
-	char *s1 = "Hello";
-	char *s2 = "Hella";
+	char *s1 = "Hello1";
+	char *s2 = "Hello5";
 
 	printf("strcmp = %d\n", strcmp(s1,s2));
 	printf("ft_strcmp = %d\n", ft_strcmp(s1,s2));
