@@ -2,3 +2,4 @@
 *.a
 unit_tests
 test
+vgcore*

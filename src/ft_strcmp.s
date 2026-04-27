@@ -21,23 +21,25 @@
 global ft_strcmp
 
 ft_strcmp:
-	mov rax, 0
-	jmp compare
+	mov rax, 0							; set rax to 0
+	jmp compare							; start comparison loop
 
 compare:
-	cmp byte[rsi + rax], 0
-	je substract
-	cmp byte[rdi + rax], 0
-	je substract
-	cmp byte [rsi + rax], [rdi + rax]
-	jne substract
-	inc rax
-	jmp compare
+	cmp byte[rsi + rax], 0				; compare s1[rax] to \0
+	je substract						; if equal jump to substract
+	cmp byte[rdi + rax], 0				; else compare s2[rax] tp \0
+	je substract						; if equal jump to substract
+	mov dl, [rdi + rax]
+	cmp byte [rsi + rax], dl			; else compare rsi[rax] to rdo[rax]
+	jne substract						; if not equal jump to substract
+	inc rax								; rax++
+	jmp compare							; loop
 
 substract:
-	mov [rsi + rax], dl
-	mov [rdi + rax], cl
-	sub dl, cl
-	mov dl, rax
-	ret
+	mov dl, 0
+	mov dl, [rsi + rax]					; store rsi[rax] in dl
+	mov cl, [rdi + rax]					; store rdi[rax] in cl
+	sub dl, cl							; substract cl to dl (result stored in dl)
+	movzx rax, dl						; move dl to rax
+	ret									; return rax
 
