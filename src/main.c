@@ -4,6 +4,20 @@ extern size_t ft_strlen(const char* str);
 extern ssize_t ft_write(int fd, const void *buf, size_t count);
 extern char *ft_strcpy(char *dest, const char *src);
 extern int ft_strcmp(const char *s1, const char *s2);
+extern char *ft_strdup(const char *s);
+
+
+void test_ft_strdup() {
+	char *s1 = "Hello1";
+	char *og;
+	char *test;
+	test = ft_strdup(s1);
+	og = strdup(s1);
+	printf("strdup = %s\n", og);
+	printf("ft_strdup = %s\n", test);
+	free(og);
+	free(test);
+}
 
 void test_ft_strcmp() {
 	char *s1 = "Hello1";
@@ -50,5 +64,6 @@ test_ft_write("");
 test_ft_strcpy("Please copy this");
 test_ft_strcpy("");
 test_ft_strcmp();
+test_ft_strdup();
 return 0;
 }

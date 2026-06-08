@@ -4,10 +4,6 @@
 ; rdx = 3rd int arg
 global ft_strcpy
 
-; get str size with strlen
-; allocate buffer in .bss
-; copy char one by one ?
-
 ft_strcpy:
 	mov rax, 0	; set rax to 0
 	jmp copy	; start copy loop
