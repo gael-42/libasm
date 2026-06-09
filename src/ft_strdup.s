@@ -11,10 +11,10 @@ extern ft_strcpy
 extern __errno_location
 
 ft_strdup:
-; 	; get s size with strlen
-; 	; allocate dest with malloc
-; 	; copy s to dest with strcpy
-; 	; return dest
+; get s size with strlen
+; allocate dest with malloc
+; copy s to dest with strcpy
+; return dest
 	call ft_strlen
 	push rdi		; strlen will move rdi (*s) pointer, need to save it to the stack
 	inc rax			; strlen result is in rax, need to inc to account for \0
