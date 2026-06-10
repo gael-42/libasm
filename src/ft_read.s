@@ -1,6 +1,5 @@
 ; ssize_t read(int fd, void *buf, size_t count);
-; rdi, rdi, rdx
-; return number of bytes read or -1 errno
+
 global ft_read
 extern	__errno_location
 
@@ -12,10 +11,10 @@ ft_read:
 	ret			; return
 
 error:
-	neg rax			; get absoute value of error
-	mov rdi, rax	; store value in 1st arg to use rax for errno pointer
-	call    __errno_location wrt ..plt	; get pointer to errno
-	mov [rax], rdi	; store error code in errno pointer?
-	mov rax, -1 	; set error
-	ret				; return
+	neg rax								; get absoute value of error
+	mov rdi, rax						; store value in 1st arg to use rax for errno pointer
+	call    __errno_location wrt ..plt	; call function to get pointer to errno
+	mov [rax], rdi						; store error code in errno pointer in rax
+	mov rax, -1 						; set error code
+	ret									; return
 

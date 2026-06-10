@@ -1,7 +1,5 @@
 ; char *strcpy(char *dest, const char *src);
-; rdi = dest, rsi = src
-; mov src, dest
-; rdx = 3rd int arg
+
 global ft_strcpy
 
 ft_strcpy:
@@ -18,5 +16,5 @@ copy:
 
 done:
 	mov byte [rdi + rax], 0	; add \0 at the end of dest
-	mov rax, rdi			; ??
+	mov rax, rdi			; move dest pointer to rax
 	ret						; return rax
