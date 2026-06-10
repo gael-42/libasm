@@ -19,7 +19,9 @@ TEST_SRC    = src/main.c
 TEST_OBJ    = $(TEST_SRC:.c=.o)
 TEST_NAME   = unit_tests
 
-all: $(NAME) $(TEST_NAME)
+all: $(NAME)
+
+main: $(NAME) $(TEST_NAME)
 
 $(NAME): $(ASM_OBJ)
 	$(AR) rcs $@ $^
