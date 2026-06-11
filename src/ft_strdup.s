@@ -9,8 +9,8 @@ extern ft_strcpy
 extern __errno_location
 
 ft_strdup:
-	call ft_strlen	; get len of string
 	push rdi		; save *s to the stack for later
+	call ft_strlen	; get len of string
 	inc rax			; strlen result is in rax, need to inc to account for \0
 	mov rdi, rax	; move result of strlen to 1st arg register for malloc
 	call malloc		; call malloc function
