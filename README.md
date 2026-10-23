@@ -26,7 +26,7 @@ Other commands:
 # Resources
 ["A friendly introduction to assembly for high-level programmers"](https://shikaan.github.io/assembly/x86/guide/2024/09/08/x86-64-introduction-hello.html), Manuel Spagnolo  
 
-[x86-64 Registers and Instructions](https://math.hws.edu/eck/cs220/f22/registers.html), Hobart abd William Smith Colleges Department of Mathematics and Computer Science  
+[x86-64 Registers and Instructions](https://math.hws.edu/eck/cs220/f22/registers.html), Hobart and William Smith Colleges Department of Mathematics and Computer Science  
 
 [x86 and amd64 instruction reference](https://www.felixcloutier.com/x86/), Félix Cloutier  
 
