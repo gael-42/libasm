@@ -1,6 +1,13 @@
 *This is a 42 school project*
 # Description
-Libasm is a small library of libc functions rewritten in 64-bit assembly.
+Libasm is a small library of libc functions rewritten in 64-bit assembly.  
+It includes:
+- read()
+- write()
+- strlen()
+- strcpy()
+- strdup()
+- strcmp()
 # Instructions
 To create the .a library file :
 - Clone the repository  
